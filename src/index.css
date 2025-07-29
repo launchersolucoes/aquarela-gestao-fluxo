@@ -2,41 +2,64 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
+/* 🎨 Aquarela PDV - Design System Claymorphism
+All colors MUST be HSL. Premium design with depth and soft shadows.
 */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* 🎨 Main Colors - Claymorphism Palette */
+    --background: 0 0% 98%;
+    --foreground: 215 16% 29%;
 
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 215 16% 29%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 215 16% 29%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* 🌈 Primary Brand - Aquarela Purple */
+    --primary: 245 58% 68%;
+    --primary-foreground: 0 0% 100%;
+    --primary-light: 245 58% 85%;
+    --primary-glow: 245 58% 68%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* 🌸 Secondary - Soft Clay */
+    --secondary: 32 8% 84%;
+    --secondary-foreground: 215 16% 29%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 32 8% 92%;
+    --muted-foreground: 215 10% 55%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 295 25% 90%;
+    --accent-foreground: 215 16% 29%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 32 8% 90%;
+    --input: 32 8% 95%;
+    --ring: 245 58% 68%;
 
-    --radius: 0.5rem;
+    --radius: 1rem;
+
+    /* 🎨 Claymorphism Effects */
+    --clay-shadow: 0 8px 32px rgba(99, 102, 241, 0.1);
+    --clay-shadow-hover: 0 12px 40px rgba(99, 102, 241, 0.15);
+    --clay-shadow-inset: inset 0 2px 4px rgba(255, 255, 255, 0.6), inset 0 -2px 4px rgba(0, 0, 0, 0.1);
+    --clay-gradient-primary: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--primary-light)) 100%);
+    --clay-gradient-soft: linear-gradient(135deg, hsl(var(--background)) 0%, hsl(var(--muted)) 100%);
+    --clay-gradient-card: linear-gradient(145deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.85) 100%);
+
+    /* 🎯 System Status Colors */
+    --success: 142 71% 45%;
+    --warning: 38 92% 50%;
+    --info: 200 94% 86%;
+
+    /* 📱 Interactive States */
+    --hover-lift: translateY(-2px);
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-spring: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 
     --sidebar-background: 0 0% 98%;
 
@@ -56,41 +79,31 @@ All colors MUST be HSL.
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    --background: 215 28% 12%;
+    --foreground: 32 8% 92%;
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    --card: 215 28% 15%;
+    --card-foreground: 32 8% 92%;
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    --primary: 245 58% 72%;
+    --primary-foreground: 215 28% 12%;
+    --primary-light: 245 58% 85%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 215 20% 20%;
+    --secondary-foreground: 32 8% 92%;
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    --muted: 215 20% 18%;
+    --muted-foreground: 215 10% 65%;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 295 25% 25%;
+    --accent-foreground: 32 8% 92%;
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    --border: 215 20% 22%;
+    --input: 215 20% 20%;
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --clay-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    --clay-shadow-hover: 0 12px 40px rgba(0, 0, 0, 0.4);
+    --clay-gradient-card: linear-gradient(145deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.1) 100%);
   }
 }
 
@@ -100,6 +113,67 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-sans antialiased;
+    background: linear-gradient(135deg, hsl(var(--background)) 0%, hsl(var(--muted)) 100%);
+    min-height: 100vh;
+  }
+
+  /* 🎨 Claymorphism Base Utilities */
+  .clay-card {
+    @apply bg-card border border-border rounded-2xl shadow-lg;
+    background: var(--clay-gradient-card);
+    box-shadow: var(--clay-shadow);
+    transition: var(--transition-smooth);
+  }
+
+  .clay-card:hover {
+    transform: var(--hover-lift);
+    box-shadow: var(--clay-shadow-hover);
+  }
+
+  .clay-button {
+    @apply relative overflow-hidden rounded-xl px-6 py-3 font-medium;
+    background: var(--clay-gradient-primary);
+    box-shadow: var(--clay-shadow);
+    transition: var(--transition-spring);
+  }
+
+  .clay-button:hover {
+    transform: var(--hover-lift) scale(1.02);
+    box-shadow: var(--clay-shadow-hover);
+  }
+
+  .clay-button:active {
+    transform: translateY(1px) scale(0.98);
+  }
+
+  .clay-input {
+    @apply bg-input border-2 border-border rounded-xl px-4 py-3;
+    box-shadow: var(--clay-shadow-inset);
+    transition: var(--transition-smooth);
+  }
+
+  .clay-input:focus {
+    @apply border-primary;
+    box-shadow: 0 0 0 3px hsl(var(--primary) / 0.1);
+  }
+
+  /* 🌈 Animations */
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+  }
+
+  @keyframes glow {
+    0%, 100% { box-shadow: 0 0 20px hsl(var(--primary) / 0.3); }
+    50% { box-shadow: 0 0 30px hsl(var(--primary) / 0.5); }
+  }
+
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  .animate-glow {
+    animation: glow 2s ease-in-out infinite;
   }
 }
